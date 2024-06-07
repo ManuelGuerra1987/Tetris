@@ -1,6 +1,6 @@
 import pygame, sys, random
 
-# Definitions
+
 class Colors:
     dark_grey = (26, 31, 40) # grid
     green = (47, 230, 23) # id 1
