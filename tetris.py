@@ -1,6 +1,20 @@
 import pygame, sys, random
 
 # Definitions
+class Colors:
+    dark_grey = (26, 31, 40) # grid
+    green = (47, 230, 23) # id 1
+    red = (232, 18, 18) # id 2
+    orange = (226, 116, 17) # id 3
+    yellow = (237, 234, 4) # id 4
+    purple = (166, 0, 247) # id 5
+    cyan = (21, 204, 209) # id 6
+    blue = (13, 64, 216) # id 7
+
+    @classmethod
+    def get_colors(cls):
+        return [cls.dark_grey, cls.green, cls.red, cls.orange, cls.yellow, cls.purple, cls.cyan, cls.blue]
+
 
 class Grid:
     def __init__(self):
@@ -8,8 +22,8 @@ class Grid:
         self.num_cols = 10
         self.cell_size = 30
         self.grid = [[0 for j in range(self.num_cols)] for i in range(self.num_rows)] # 20x10 zero matrix
-        self.colours = [(26, 31, 40),(47, 230, 23),(232, 18, 18),(226, 116, 17),(237, 234, 4),(166, 0, 247),(21, 204, 209),(13, 64, 216)] 
-                       # [dark grey:grid,green:id 1,red: id 2,orange: id 3,yellow: id 4,purple: id 5,cyan: id 6,blue: id 7] 
+        self.colours = Colors.get_colors()
+                       
  
     def draw(self,screen):
         for row in range(self.num_rows):
@@ -64,7 +78,7 @@ class Block:
         self.cells = {}
         self.cell_size = 30
         self.rotation_state = 0
-        self.colours = [(26, 31, 40),(47, 230, 23),(232, 18, 18),(226, 116, 17),(237, 234, 4),(166, 0, 247),(21, 204, 209),(13, 64, 216)] 
+        self.colours = Colors.get_colors()
         self.row_offset = 0
         self.column_offset = 0
 
